@@ -15,7 +15,7 @@ if (!root) throw new Error('Missing #root element in index.html');
 
 createRoot(root).render(
   <StrictMode>
-    <Router>
+    <Router basename={import.meta.env.VITE_MEMORY_ROUTER ? undefined : import.meta.env.BASE_URL}>
       <App />
     </Router>
   </StrictMode>,
