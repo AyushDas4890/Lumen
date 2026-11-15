@@ -23,9 +23,7 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
-      - run: npm run build
-        env:
-          VITE_BASE: /Lumen/
+      - run: npx tsc --noEmit && npx vite build --base=/Lumen/
       # GitHub Pages has no SPA rewrites: serve the app for deep links via 404.html
       - run: cp dist/index.html dist/404.html
       - uses: actions/configure-pages@v5
