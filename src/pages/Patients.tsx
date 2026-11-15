@@ -4,6 +4,7 @@ import {Button} from '@astryxdesign/core/Button';
 import {PageHead} from '../components/PageHead';
 import {Icon} from '../components/Icon';
 import {faqs} from '../data';
+import {img} from '../assets';
 
 const cards = [
   {icon: 'clipboard-list' as const, title: 'What to bring', text: 'A photo ID, your insurance card, a list of current medications and any recent test results.'},
@@ -19,6 +20,7 @@ export default function Patients() {
         What to expect before, during and after your visit.
       </PageHead>
       <div className="container">
+        <figure className="banner rv"><img src={img('posters')} alt="LumenPath posters: A steadier path forward, You deserve to be understood, Care that meets you where you are" loading="lazy" /></figure>
         <div className="infogrid">
           {cards.map((c) => (
             <Card key={c.title} padding={5}>

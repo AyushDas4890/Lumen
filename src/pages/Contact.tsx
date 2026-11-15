@@ -7,6 +7,7 @@ import {Card} from '@astryxdesign/core/Card';
 import {PageHead} from '../components/PageHead';
 import {ClinicMap} from '../components/Art';
 import {Icon} from '../components/Icon';
+import {img} from '../assets';
 
 const hours = [['Monday to Friday', '8:00 to 18:00'], ['Saturday', 'Closed'], ['Sunday', 'Closed']];
 
@@ -35,6 +36,7 @@ export default function Contact() {
       <div className="container contact">
         <div className="contact__left">
           <div className="loc__map"><ClinicMap /><span className="loc__cap">Illustrative map</span></div>
+          <figure className="signfig"><img src={img('sign')} alt="LumenPath Health wayfinding sign pointing to the clinic" loading="lazy" /><figcaption>Follow the LumenPath signs once you’re inside the building.</figcaption></figure>
           <Card padding={5}>
             <div className="stack">
               <h2 className="h3">LumenPath Health clinic</h2>

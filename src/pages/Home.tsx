@@ -3,7 +3,8 @@ import {Link} from 'react-router-dom';
 import {Button} from '@astryxdesign/core/Button';
 import {Collapsible} from '@astryxdesign/core/Collapsible';
 import {Badge} from '@astryxdesign/core/Badge';
-import {HeroHills, ClinicMap} from '../components/Art';
+import {HeroHills} from '../components/Art';
+import {img} from '../assets';
 import {FindCard} from '../components/FindCard';
 import {OpeningsCard} from '../components/OpeningsCard';
 import {PathSteps} from '../components/PathSteps';
@@ -90,17 +91,7 @@ export default function Home() {
 
       <section className="section section--tint">
         <div className="container feature">
-          <div className="feature__art rv" aria-hidden="true">
-            <svg viewBox="0 0 400 320" preserveAspectRatio="xMidYMid slice" focusable="false">
-              <rect width="400" height="320" fill="#D9EDEB" />
-              <circle cx="270" cy="110" r="54" fill="#FBE3D6" />
-              <path d="M0 220 C 90 190, 170 214, 260 196 S 360 190, 400 198 V320 H0Z" fill="#B9DAD8" />
-              <path d="M0 262 C 100 236, 190 262, 280 244 S 360 240, 400 246 V320 H0Z" fill="#0F5A6A" />
-              <path d="M150 330 C 170 290, 120 276, 160 246 S 226 232, 214 192" fill="none" stroke="#fff" strokeWidth="14" strokeLinecap="round" />
-              <path d="M198 192 v-18 a16 16 0 0 1 32 0 v18z" fill="#E0825A" />
-              <path d="M214 130l4 10 10 4-10 4-4 10-4-10-10-4 10-4z" fill="#0F5A6A" />
-            </svg>
-          </div>
+          <div className="feature__art rv"><img src={img('billboard')} alt="LumenPath recovery programme poster: a winding path across soft dunes" loading="lazy" /></div>
           <div className="feature__text">
             <p className="eyebrow rv">Long-COVID recovery</p>
             <h2 className="rv">Recovery looks different here</h2>
@@ -141,8 +132,24 @@ export default function Home() {
       </section>
 
       <section className="section section--tint">
+        <div className="container team">
+          <div className="team__photos rv">
+            <img src={img('nurse-green')} alt="A LumenPath nurse in green scrubs" loading="lazy" />
+            <img src={img('nurse-teal')} alt="A LumenPath clinician in teal scrubs" loading="lazy" />
+          </div>
+          <div className="team__text">
+            <p className="eyebrow rv">Our care team</p>
+            <h2 className="rv">People who listen first</h2>
+            <p className="rv">Nurses, doctors and recovery specialists work as one team, so you meet familiar faces and tell your story once.</p>
+            <div className="rv row"><Button label="Find a doctor" variant="primary" size="lg" href="/doctors" /><Button label="Our services" variant="secondary" size="lg" href="/services" /></div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
         <div className="container">
           <div className="section__head rv"><div><h2>How booking works</h2><p>Three steps, about a minute.</p></div></div>
+          <div className="how-wrap">
           <div className="how rv">
             <PathSteps steps={['Choose', 'Pick a time', 'Confirm']} current={0} />
             <ol className="how__copy">
@@ -151,10 +158,12 @@ export default function Home() {
               <li><b>Confirm</b><span>Add your details and get a confirmation code. Cancel any time under My appointments.</span></li>
             </ol>
           </div>
+          <div className="how__phone rv"><img src={img('phone')} alt="Booking a LumenPath visit on a phone" loading="lazy" /></div>
+          </div>
         </div>
       </section>
 
-      <section className="section">
+      <section className="section section--tint">
         <div className="container loc">
           <div className="loc__info rv">
             <h2>Visit the clinic</h2>
@@ -166,11 +175,11 @@ export default function Home() {
             <p className="loc__phone"><Icon name="phone" size={18} /> (555) 010-0199</p>
             <Button label="Locations and contact" variant="secondary" href="/contact" />
           </div>
-          <div className="loc__map rv"><ClinicMap /><span className="loc__cap">Illustrative map</span></div>
+          <div className="loc__map rv"><img src={img('clinic-facade')} alt="The LumenPath Health clinic building" loading="lazy" /><span className="loc__cap">The clinic at 120 Lumen Way</span></div>
         </div>
       </section>
 
-      <section className="section section--tint">
+      <section className="section">
         <div className="container faqwrap">
           <div className="faqwrap__head rv">
             <h2>Common questions</h2>

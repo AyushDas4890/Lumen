@@ -150,8 +150,8 @@ ul, ol { padding: 0; list-style: none; }
 .spec:hover .spec__go svg { transform: translateX(3px); }
 
 .feature { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 64px; align-items: center; }
-.feature__art { aspect-ratio: 5 / 4; border-radius: 24px; overflow: hidden; }
-.feature__art svg { width: 100%; height: 100%; display: block; }
+.feature__art { aspect-ratio: 4 / 5; max-height: 600px; border-radius: 24px; overflow: hidden; box-shadow: var(--shadow-2); }
+.feature__art img, .loc__map img, .team__photos img, .how__phone img, .banner img, .signfig img { width: 100%; height: 100%; display: block; object-fit: cover; }
 .feature__text { display: grid; gap: 20px; justify-items: start; }
 .feature h2 { font-size: clamp(28px, 3.4vw, 40px); line-height: 1.15; }
 .feature__text > p { color: var(--ink-2); font-size: 17px; line-height: 26px; max-width: 46ch; }
@@ -397,3 +397,21 @@ ul, ol { padding: 0; list-style: none; }
   .js .rv { opacity: 1; transform: none; }
   .hills__path { stroke-dashoffset: 0; }
 }
+
+.team { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 64px; align-items: center; }
+@media (max-width: 900px) { .team { grid-template-columns: 1fr; gap: 32px; } }
+.team__photos { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.team__photos img { aspect-ratio: 1 / 1; border-radius: 20px; box-shadow: var(--shadow-1); object-position: 50% 50%; }
+.team__photos img:last-child { margin-top: 40px; }
+.team__text { display: grid; gap: 20px; justify-items: start; }
+.team__text h2 { font-family: var(--serif); font-weight: 500; letter-spacing: -0.02em; font-size: clamp(28px, 3.4vw, 40px); line-height: 1.15; }
+.team__text > p:not(.eyebrow) { color: var(--ink-2); font-size: 17px; line-height: 26px; max-width: 46ch; }
+.how-wrap { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 56px; align-items: center; }
+@media (max-width: 960px) { .how-wrap { grid-template-columns: 1fr; } .how__phone { max-width: 320px; } }
+.how__phone { aspect-ratio: 3 / 4; border-radius: 24px; overflow: hidden; box-shadow: var(--shadow-2); }
+.how-wrap .how__copy { grid-template-columns: 1fr; gap: 20px; }
+.banner { margin: 48px 0 0; border-radius: 24px; overflow: hidden; aspect-ratio: 21 / 9; box-shadow: var(--shadow-2); }
+.banner img { object-position: 50% 45%; }
+.signfig { margin: 0; display: grid; gap: 8px; }
+.signfig img { aspect-ratio: 16 / 9; border-radius: 16px; object-position: 50% 40%; }
+.signfig figcaption { font-size: 14px; color: var(--muted); }
